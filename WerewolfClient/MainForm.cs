@@ -164,6 +164,8 @@ namespace WerewolfClient
                     case EventEnum.GameStopped:
                         AddChatMessage("Game is finished, outcome is " + wm.EventPayloads["Game.Outcome"]);
                         _updateTimer.Enabled = false;
+                        MessageBox.Show("Game Over\nClick OK to close", "Game Ended", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.Close();
                         break;
                     case EventEnum.GameStarted:
                         players = wm.Players;

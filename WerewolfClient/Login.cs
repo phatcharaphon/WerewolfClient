@@ -45,7 +45,7 @@ namespace WerewolfClient
                         }
                         else
                         {
-                            MessageBox.Show("Login or password incorrect, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("This username is used", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         break;
                 }
