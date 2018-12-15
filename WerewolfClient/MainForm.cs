@@ -44,6 +44,7 @@ namespace WerewolfClient
             EnableButton(BtnVote, false);
             _myRole = null;
             _isDead = false;
+            pictureBox1.Image = Properties.Resources.Guide_villager;
         }
 
         private void OnTimerEvent(object sender, EventArgs e)
@@ -210,6 +211,8 @@ namespace WerewolfClient
                         EnableButton(BtnVote, true);
                         EnableButton(BtnJoin, false);
                         UpdateAvatar(wm);
+                        //select guide file
+                        openGuide(_myRole);
                         break;
                     case EventEnum.SwitchToDayTime:
                         AddChatMessage("Switch to day time of day #" + wm.EventPayloads["Game.Current.Day"] + ".");
@@ -397,6 +400,75 @@ namespace WerewolfClient
                 wcmd.Payloads = new Dictionary<string, string>() { { "Message", TbChatInput.Text } };
                 TbChatInput.Text = "";
                 controller.ActionPerformed(wcmd);
+            }
+        }
+
+        private void openGuide(string role)
+        {
+            Image img=null;
+            switch(role)
+            {
+                case WerewolfModel.ROLE_SEER:
+                    img = Properties.Resources.Guide_seer;
+                    break;
+                case WerewolfModel.ROLE_AURA_SEER:
+                    img = Properties.Resources.Guide_aura_seer;
+                    break;
+                case WerewolfModel.ROLE_PRIEST:
+                    img = Properties.Resources.Guide_priest;
+                    break;
+                case WerewolfModel.ROLE_DOCTOR:
+                    img = Properties.Resources.Guide_doctor;
+                    break;
+                case WerewolfModel.ROLE_WEREWOLF:
+                    img = Properties.Resources.Guide_werewolf;
+                    break;
+                case WerewolfModel.ROLE_WEREWOLF_SEER:
+                    img = Properties.Resources.Guide_wolf_seer;
+                    break;
+                case WerewolfModel.ROLE_ALPHA_WEREWOLF:
+                    img = Properties.Resources.Guide_alpha_werewolf;
+                    break;
+                case WerewolfModel.ROLE_WEREWOLF_SHAMAN:
+                    img = Properties.Resources.Guide_wolf_shaman;
+                    break;
+                case WerewolfModel.ROLE_MEDIUM:
+                    img = Properties.Resources.Guide_medium;
+                    break;
+                case WerewolfModel.ROLE_BODYGUARD:
+                    img = Properties.Resources.Guide_bodyguard;
+                    break;
+                case WerewolfModel.ROLE_JAILER:
+                    img = Properties.Resources.Guide_jailer;
+                    break;
+                case WerewolfModel.ROLE_FOOL:
+                    img = Properties.Resources.Guide_fool;
+                    break;
+                case WerewolfModel.ROLE_HEAD_HUNTER:
+                    img = Properties.Resources.Guide_head_hunter;
+                    break;
+                case WerewolfModel.ROLE_SERIAL_KILLER:
+                    img = Properties.Resources.Guide_serial_killer;
+                    break;
+                case WerewolfModel.ROLE_GUNNER:
+                    img = Properties.Resources.Guide_gunner;
+                    break;
+            }
+            if(img!=null)pictureBox1.Image = img;
+            button1.Text += " : " + role;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PictureBox p = pictureBox1;
+            p.SizeMode=PictureBoxSizeMode.StretchImage;
+            if (p.Visible)
+            {
+                p.Visible = false;
+            }
+            else
+            {
+                p.Visible = true;
             }
         }
     }

@@ -102,6 +102,23 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Time_day.jpg" />
+    <None Include="Resources\Guide_alpha_werewolf.jpg" />
+    <None Include="Resources\Guide_aura_seer.jpg" />
+    <None Include="Resources\Guide_bodyguard.jpg" />
+    <None Include="Resources\Guide_doctor.jpg" />
+    <None Include="Resources\Guide_fool.jpg" />
+    <None Include="Resources\Guide_gunner.jpg" />
+    <None Include="Resources\Guide_head_hunter.jpg" />
+    <None Include="Resources\Guide_jailer.jpg" />
+    <None Include="Resources\Guide_medium.jpg" />
+    <None Include="Resources\Guide_priest.jpg" />
+    <None Include="Resources\Guide_seer.jpg" />
+    <None Include="Resources\Guide_serial_killer.jpg" />
+    <None Include="Resources\Guide_villager.jpg" />
+    <None Include="Resources\Guide_werewolf.jpg" />
+    <None Include="Resources\Guide_wolf_seer.jpg" />
+    <None Include="Resources\Guide_wolf_shaman.jpg" />
     <Content Include="Resources\Icon_alpha_werewolf.png" />
     <Content Include="Resources\Icon_aura_seer.png" />
     <Content Include="Resources\Icon_bodyguard.png" />
